@@ -7,4 +7,8 @@ definitions:
   - netlib-lapack%build_compiler
   - ucc%build_compiler
   - nvshmem%build_compiler
-  - osu-micro-benchmarks%build_compiler
+  - gdrcopy%build_compiler
+  - tbb%build_compiler
+  - intel-oneapi-tbb%build_compiler
+  - intel-oneapi-mkl%build_compiler
+  - mvapich2%build_compiler

@@ -3,9 +3,11 @@
 # It describes a set of packages to be installed, along with
 # configuration settings.
 spack:
+  config:
+    deprecated: true
   include:
   - ../toolchains/gcc-15.yaml
-  - ../lqcd-specs.yaml
+  - ./lqcd-specs.yaml
   # add package specs to the `specs` list
   specs:
   - $lqcd_specs
@@ -23,6 +25,7 @@ spack:
       - +pic
       - +shared
       - +static
+      - cxxstd=17
     fftw:
       require:
       - precision=float,double,long_double,quad
@@ -31,9 +34,21 @@ spack:
     hdf5:
       require:
       - +szip
+      - +mpi
+      - +cxx
     libfabric:
       require:
       - +cuda_dlopen
     ucc:
       require:
       - +nccl
+    cuda:
+      require:
+      - '@13:'
+    openmpi:
+      require:
+      - schedulers=slurm
+      - fabrics=ucx,psm2
+    mvapich2:
+      require:
+      - process_managers=slurm
