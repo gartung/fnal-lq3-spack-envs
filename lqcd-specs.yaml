@@ -1,0 +1,10 @@
+definitions:
+- lqcd_specs:
+  - fftw%build_compiler
+  - hdf5%build_compiler
+  - openblas%build_compiler
+  - openmpi%build_compiler
+  - netlib-lapack%build_compiler
+  - ucc%build_compiler
+  - nvshmem%build_compiler
+  - osu-micro-benchmarks%build_compiler

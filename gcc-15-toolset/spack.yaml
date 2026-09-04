@@ -1,0 +1,39 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  include:
+  - ../toolchains/gcc-15.yaml
+  - ../lqcd-specs.yaml
+  # add package specs to the `specs` list
+  specs:
+  - $lqcd_specs
+  view: true
+  concretizer:
+    unify: true
+  packages:
+    all:
+      target:
+      - x86_64_v4
+      variants:
+      - +cuda
+      - cuda_arch=80
+      - arch=sm_80
+      - +pic
+      - +shared
+      - +static
+    fftw:
+      require:
+      - precision=float,double,long_double,quad
+      - +openmp
+      - ~mpi
+    hdf5:
+      require:
+      - +szip
+    libfabric:
+      require:
+      - +cuda_dlopen
+    ucc:
+      require:
+      - +nccl
