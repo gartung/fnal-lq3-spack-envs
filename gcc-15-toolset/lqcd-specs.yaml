@@ -11,4 +11,3 @@ definitions:
   - tbb%build_compiler
   - intel-oneapi-tbb%build_compiler
   - intel-oneapi-mkl%build_compiler
-  - mvapich2%build_compiler

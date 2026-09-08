@@ -4,6 +4,8 @@
 # configuration settings.
 spack:
   # add package specs to the `specs` list
+  include:
+  - ../packages.yaml
   specs:
   - gcc@15+graphite+nvptx ^cuda@13
   - gcc@14+graphite+nvptx ^cuda@13

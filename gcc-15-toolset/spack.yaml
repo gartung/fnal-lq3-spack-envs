@@ -8,6 +8,7 @@ spack:
   include:
   - ../toolchains/gcc-15.yaml
   - ./lqcd-specs.yaml
+  - ../packages.yaml
   # add package specs to the `specs` list
   specs:
   - $lqcd_specs
@@ -47,8 +48,21 @@ spack:
       - '@13:'
     openmpi:
       require:
+      - '@:4'
       - schedulers=slurm
-      - fabrics=ucx,psm2
+      - fabrics=ucx
     mvapich2:
       require:
       - process_managers=slurm
+    slurm:
+      require:
+      - "@=25.11.6"
+    hwloc:
+      require:
+      - "@=2.9.3"
+    pmix:
+      require:
+      - one_of: ["@=4.2.9", "@=5.0.4"]
+    opa-psm2:
+      require:
+      - cflags="-DHFI1_CAP_GPUDIRECT_OT -D_GNU_SOURCE"
