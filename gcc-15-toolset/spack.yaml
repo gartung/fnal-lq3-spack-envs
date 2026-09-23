@@ -50,19 +50,25 @@ spack:
       require:
       - '@:4'
       - schedulers=slurm
-      - fabrics=ucx
+      - +legacylaunchers
+      - fabrics=auto
     mvapich2:
       require:
       - process_managers=slurm
     slurm:
       require:
-      - "@=25.11.6"
+      - '@=25.11.8'
     hwloc:
       require:
-      - "@=2.9.3"
+      - '@=2.9.3'
     pmix:
       require:
-      - one_of: ["@=4.2.9", "@=5.0.4"]
+      - one_of: ['@=4.2.9', '@=5.0.4']
     opa-psm2:
       require:
       - cflags="-DHFI1_CAP_GPUDIRECT_OT -D_GNU_SOURCE"
+  modules:
+    default:
+      lmod:
+        core_compilers:
+        - gcc@11.5.0/7wl7o7ktva4ogl6e4brwwcufbwdyuofc

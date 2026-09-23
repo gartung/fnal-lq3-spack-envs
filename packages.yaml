@@ -1,8 +1,9 @@
 packages:
   slurm:
     externals:
-    - spec: slurm@25.11.6
+    - spec: slurm@25.11.8
       prefix: /usr
+    buildable: false
   python:
     externals:
     - spec: python@3.9.25+bz2+crypt+ctypes+dbm+lzma+pyexpat+pythoncmd+readline+sqlite3+ssl~tkinter+uuid+zlib
