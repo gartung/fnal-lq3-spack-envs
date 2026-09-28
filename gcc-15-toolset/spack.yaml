@@ -51,7 +51,7 @@ spack:
       - '@:4'
       - schedulers=slurm
       - +legacylaunchers
-      - fabrics=auto
+      - fabrics=ucx
     mvapich2:
       require:
       - process_managers=slurm
