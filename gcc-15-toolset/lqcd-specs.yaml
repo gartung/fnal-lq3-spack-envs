@@ -1,5 +1,6 @@
 definitions:
 - lqcd_specs:
+  - amdblis%build_compiler
   - fftw%build_compiler
   - hdf5%build_compiler
   - openblas%build_compiler
