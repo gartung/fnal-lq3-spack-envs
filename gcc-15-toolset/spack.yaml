@@ -27,6 +27,9 @@ spack:
       - +shared
       - +static
       - cxxstd=17
+    amdblis:
+      require:
+      - +aocl_gemm
     fftw:
       require:
       - precision=float,double,long_double,quad
